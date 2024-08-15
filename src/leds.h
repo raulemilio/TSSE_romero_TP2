@@ -20,10 +20,6 @@ SPDX-License-Identifier: MIT
 *************************************************************************************************/
 #include <stdint.h>
 
-#define ALL_LED_OFF   0x00
-#define LED_STATE_OFF 0
-#define ALL_LED_ON    0xFF
-
 /**
  * @brief Función para iniciar el array de led apagados
  *
@@ -50,14 +46,14 @@ void led_turn_off(int led);
  *
  * @param puerto puerto del array de leds
  */
-void led_multi_on(uint16_t * puerto);
+void led_turn_all_on(uint16_t * puerto);
 
 /**
  * @brief Función para apagar todos los leds
  *
  * @param puerto puerto del array de leds
  */
-void led_multi_off(uint16_t * puerto);
+void led_turn_all_off(uint16_t * puerto);
 
 /**
  * @brief Función para ver el estado de un led

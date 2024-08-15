@@ -27,9 +27,12 @@ SPDX-License-Identifier: MIT
 
 #include "leds.h"
 
-#define BIT_HIGH   1
-#define LED_OFFSET 1
 /* === Macros definitions ====================================================================== */
+#define BIT_HIGH   1       
+#define LED_OFFSET 1       // corrimiento necesario para identidicar correctamente cada led
+#define LED_STATE_OFF 0    // led apagado
+#define ALL_LED_OFF   0x00 // todos los led apagados
+#define ALL_LED_ON    0xFF // todos los led encendidos
 /* === Private data type declarations ========================================================== */
 static uint16_t * puntero;
 /* === Private variable declarations =========================================================== */
@@ -58,12 +61,12 @@ void led_turn_off(int led) {
     *puntero &= ~led_to_mask(led);
 }
 
-void led_multi_on(uint16_t * puerto) {
+void led_turn_all_on(uint16_t * puerto) {
     puntero = puerto;
     *puntero = ALL_LED_ON;
 }
 
-void led_multi_off(uint16_t * puerto) {
+void led_turn_all_off(uint16_t * puerto) {
     puntero = puerto;
     *puntero = ALL_LED_OFF;
 }

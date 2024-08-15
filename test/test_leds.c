@@ -33,6 +33,13 @@ Comprobar los valores de limite
 #include "unity.h"
 #include "leds.h"
 
+/* === Macros definitions ====================================================================== */
+
+
+#define LED_STATE_OFF 0
+#define ALL_LED_OFF   0x00
+#define ALL_LED_ON    0xFF
+
 //! Variables de prueba
 static uint16_t leds_virtuales;
 static const int LED = 3;
@@ -81,7 +88,6 @@ void test_apagar_un_led(void) {
 
 /**
  * @brief Apagar todos los leds que ya estan prendidos
- *
  */
 void test_prender_y_apagar_varios_led(void) {
     led_turn_on(5);
@@ -94,25 +100,22 @@ void test_prender_y_apagar_varios_led(void) {
 
 /**
  * @brief Prender todos los leds en una sola operación
- *
  */
 void test_prender_todos_los_leds(void) {
-    led_multi_on(&leds_virtuales);
+    led_turn_all_on(&leds_virtuales);
     TEST_ASSERT_EQUAL_UINT16(ALL_LED_ON, leds_virtuales);
 }
 
 /**
  * @brief Apagar todos los leds en una solo operación
- *
  */
 void test_apagar_todos_los_leds(void) {
-    led_multi_off(&leds_virtuales);
+    led_turn_all_off(&leds_virtuales);
     TEST_ASSERT_EQUAL_UINT16(ALL_LED_OFF, leds_virtuales);
 }
 
 /**
  * @brief Ver estado del led a partir de led OFF
- *
  */
 void test_estado_led_off(void) {
     TEST_ASSERT_EQUAL_UINT16(LED_STATE_OFF, led_get_state(LED));
@@ -120,9 +123,8 @@ void test_estado_led_off(void) {
 
 /**
  * @brief Ver estado del led a partir de led ON
- *
  */
-void test_estado_led_on(void) {
+void test_led_is_turned_on(void) {
     led_turn_on(LED);
     TEST_ASSERT_EQUAL_UINT16(LED + 1, led_get_state(LED));
 }
