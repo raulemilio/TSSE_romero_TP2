@@ -50,7 +50,7 @@ static uint16_t led_to_mask(int led) {
 /* === Public function implementation ========================================================== */
 void leds_init(uint16_t * puerto) {
     puntero = puerto;
-    *puntero = ALL_LED_OFF;
+    led_turn_all_off(puntero);
 }
 
 void led_turn_on(int led) {
