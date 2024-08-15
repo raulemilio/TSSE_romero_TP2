@@ -28,8 +28,8 @@ SPDX-License-Identifier: MIT
 #include "leds.h"
 
 /* === Macros definitions ====================================================================== */
-#define BIT_HIGH   1       
-#define LED_OFFSET 1       // corrimiento necesario para identidicar correctamente cada led
+//#define BIT_HIGH   1       
+//#define LED_OFFSET 1       // corrimiento necesario para identidicar correctamente cada led
 #define LED_STATE_OFF 0    // led apagado
 #define ALL_LED_OFF   0x00 // todos los led apagados
 #define ALL_LED_ON    0xFF // todos los led encendidos
