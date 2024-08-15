@@ -60,4 +60,4 @@ void led_turn_all_off(uint16_t * puerto);
  *
  * @param puerto puerto del array de leds
  */
-int led_get_state(int led)
+int led_get_state(int led);
