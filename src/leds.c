@@ -62,5 +62,4 @@ void led_turn_all_off(uint16_t * puerto) {
 int led_get_state(int led) {
     return (*puntero & (BIT_HIGH << (led - LED_OFFSET)));
 }
-
 /* === End of documentation ==================================================================== */
