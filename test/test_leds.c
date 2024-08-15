@@ -35,7 +35,6 @@ Comprobar los valores de limite
 
 /* === Macros definitions ====================================================================== */
 
-
 #define LED_STATE_OFF 0
 #define ALL_LED_OFF   0x00
 #define ALL_LED_ON    0xFF
